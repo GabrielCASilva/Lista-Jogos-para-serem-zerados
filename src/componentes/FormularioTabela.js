@@ -232,22 +232,16 @@ const ListaJogos = () => {
 
         if( novaCategoriaJogoTabela > 0 && novoNomeJogoTabela && novaDataFinalizarTabela && novoTurno){
             adicionarEstiloJogoCategoria()
-            
-            //let data = moment(novaDataFinalizarTabela)
 
-            //let dataModificada = novaDataFinalizarTabela.split('-')
-            //const dataBr = `${dataModificada[2]}/${dataModificada[1]}/${dataModificada[0]}`
-
-            // const indiceUltimo = itensTabela.length - 1
-            // const ultimo = itensTabela[indiceUltimo]
-            // const idUltimo = ultimo.id
-            // const novoItem = parseInt(idUltimo) + 1
+            const indiceUltimo = itensTabela.length - 1
+            const ultimo = itensTabela[indiceUltimo]
+            const idUltimo = ultimo.id
+            const novoItem = parseInt(idUltimo) + 1
 
             const novoItemObj = {
-                "id" : itensTabela.length - 1,
+                "id" : novoItem,
                 "numeracao": itensTabela.length + 1,
                 "nome": novoNomeJogoTabela,
-                //"data": dataBr,
                 "data": novaDataFinalizarTabela,
                 "alerta" : novoAlerta,
                 "idEstilo": novaCategoriaJogoTabela,
