@@ -1,0 +1,66 @@
+:root{
+    --borda-r: 6px;
+    --cor-head-foot: rgb(236, 197, 125);
+    --padding-tabela: 15px;
+}
+
+.tabela{
+    border: 2px solid #000;
+    background-color: var(--cor-head-foot);
+    border-collapse: collapse;
+    max-width: 800px;
+    min-width: 620px;
+    height: 100px;
+    box-shadow: 10px 10px rgba(14, 29, 70, 0.7);
+    margin-bottom: 80px;
+}
+
+.tabela > *{
+    border-radius: var(--borda-r);
+}
+
+tr{
+    text-align: left;
+    transition: all .2s ease-in; 
+}
+
+.tabela-header{
+    background-color: var(--cor-head-foot); 
+}
+
+.tabela-header th {
+    padding: var(--padding-tabela);
+    border-bottom: 1px solid black;
+
+}
+
+.tabela-corpo{
+    cursor: pointer;
+}
+
+.tabela-corpo td{
+    background-color: rgb(157, 250, 192);
+    padding: 10px var(--padding-tabela);
+}
+
+
+.tabela-corpo tr:hover{
+    transform: scale(1.02);
+    box-shadow: 9px 9px rgba(14, 29, 70, 0.2);
+}
+
+.sino{
+    margin-left: 10px;
+    width: 20px;
+}
+
+.lixeira{
+    width: 40px;
+}
+
+tfoot td{
+    background-color: var(--cor-head-foot);
+    font-weight: 500;
+    padding: 5px;
+    border-top: 2px solid black;
+}

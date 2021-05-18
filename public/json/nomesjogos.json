@@ -1,0 +1,16 @@
+{
+    "nomesjogos":[
+        {
+            "id": "1",
+            "nome": "Dark Souls"
+        },
+        {
+            "id": "2",
+            "nome": "BioShock"
+        },
+        {
+            "id": "3",
+            "nome": "Hollow Knight"
+        }
+    ]
+}

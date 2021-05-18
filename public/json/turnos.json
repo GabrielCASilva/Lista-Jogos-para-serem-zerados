@@ -1,0 +1,16 @@
+{
+    "turnos":[
+        {
+            "id": "1",
+            "turno": "Manhã"
+        },
+        {
+            "id": "2",
+            "turno": "Tarde"
+        },
+        {
+            "id": "3",
+            "turno": "Noite"
+        }
+    ]
+}

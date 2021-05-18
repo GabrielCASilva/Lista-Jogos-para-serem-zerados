@@ -1,0 +1,44 @@
+{
+    "categoriasJogos":[
+        {
+            "id": "1",
+            "descricao": "FPS"
+        },
+        {
+            "id": "2",
+            "descricao": "RPG"
+        },
+        {
+            "id": "3",
+            "descricao": "Ação"
+        },
+        {
+            "id": "4",
+            "descricao": "Corrida"
+        },
+        {
+            "id": "5",
+            "descricao": "Esportes"
+        },
+        {
+            "id": "6",
+            "descricao": "Estratégia"
+        },
+        {
+            "id": "7",
+            "descricao": "Aventura"
+        },
+        {
+            "id": "8",
+            "descricao": "Terror"
+        },
+        {
+            "id": "9",
+            "descricao": "Indie"
+        },
+        {
+            "id": "10",
+            "descricao": "Metroidvania"
+        }
+    ]
+}
