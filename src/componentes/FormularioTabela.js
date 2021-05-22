@@ -6,7 +6,7 @@ import '../Formulario.css'
 
 const Titulo = () => {
     return(
-        <h3>
+        <h3 className="titulo">
             Preencha os dados abaixo com um jogo que
             você pretende zerar
         </h3>
