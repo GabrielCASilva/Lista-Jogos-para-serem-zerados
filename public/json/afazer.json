@@ -2,7 +2,6 @@
     "afazer": [
         {
             "id": "0",
-            "numeracao": "1",
             "nome": "Dark Souls",
             "idAlerta" : "2",
             "alerta" : "desligado",
@@ -13,7 +12,6 @@
         },
         {
             "id": "1",
-            "numeracao": "2",
             "nome": "BioShock",
             "alerta" : "ligado",
             "idAlerta" : "1",
@@ -24,7 +22,6 @@
         },
         {
             "id": "2",
-            "numeracao": "3",
             "nome": "Hollow Knight",
             "idAlerta" : "2",
             "alerta" : "desligado",

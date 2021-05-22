@@ -85,8 +85,7 @@ const ListaJogos = () => {
             return alerta.map((item , i) => {
                 if(props.status === "ligado"){
                     return(
-                        <img  key={i} alt='' src={item.url} className="sino"                         
-                        onClick={() => {removerIcone(item.status)}}></img>
+                        <img  key={i} alt='' src={item.url} className="sino"></img>
                     )
                 }else{
                     return null               
@@ -144,7 +143,6 @@ const ListaJogos = () => {
                                     <LinhaTabelaComponente 
                                         key={item.id}
                                         id={item.id}
-                                        ordem={item.numeracao}
                                         nome={item.nome}
                                         estilo={item.idEstilo}
                                         alerta={item.alerta}
@@ -179,7 +177,6 @@ const ListaJogos = () => {
         return (
             
             <tr>
-                <td>{props.ordem}</td>
                 <td>{props.nome}
                     <AlertaComponente status={props.alerta}/></td>
                 <td>{categoriaJogosTabela ? categoriaJogosTabela.descricao : null}</td>
@@ -210,14 +207,6 @@ const ListaJogos = () => {
         setNovoEstilo(novoEstiloDeJogoCategoria)
     }
 
-    const removerIcone = (i) => {
-        const _alerta = alerta.filter((item) => {
-            return item.status !== i
-        })
-
-        return setAlerta(_alerta)
-    }
-
     const removerTarefa = (i) => {
         const _itensTabela = itensTabela.filter( (item) => {
             return item.id !== i
@@ -233,14 +222,20 @@ const ListaJogos = () => {
         if( novaCategoriaJogoTabela > 0 && novoNomeJogoTabela && novaDataFinalizarTabela && novoTurno){
             adicionarEstiloJogoCategoria()
 
-            const indiceUltimo = itensTabela.length - 1
-            const ultimo = itensTabela[indiceUltimo]
-            const idUltimo = ultimo.id
+
+            let idUltimo = 0
+
+            if(itensTabela.length){
+                const indiceUltimo = itensTabela.length - 1
+                const ultimo = itensTabela[indiceUltimo]
+                idUltimo = ultimo.id
+            }
+
             const novoItem = parseInt(idUltimo) + 1
+            
 
             const novoItemObj = {
                 "id" : novoItem,
-                "numeracao": itensTabela.length + 1,
                 "nome": novoNomeJogoTabela,
                 "data": novaDataFinalizarTabela,
                 "alerta" : novoAlerta,
@@ -249,12 +244,26 @@ const ListaJogos = () => {
             }
 
             setItensTabela( [...itensTabela, novoItemObj] )
+            limparCampos()
 
 
         }else{
             alert('Por favor, preencha os campos "Nome", "Previsão", "Estilo" e "Turno"')
         }
   
+    }
+
+    const limparCampos = () =>{
+        setNovoNomeJogoTabela('');
+        document.getElementById("nome").value = null
+        setNovaCategoriaJogoTabela('');
+        setNovaDataFinalizarTabela('');
+        document.getElementById("data-formulario").value = null
+        setNovoEstiloDeJogoCategoria('');
+        document.getElementById("adicionar-novo").value = null
+        setNovoTurno('');
+        setNovoAlerta("desligado");
+        document.getElementById("alerta").checked = 0
     }
 
     return (
@@ -274,7 +283,7 @@ const ListaJogos = () => {
                        
                         <div className="envolve-data">
                             <label>Previsão</label>
-                            <input type="date"
+                            <input type="date" id="data-formulario"
                             onChange={ (e) => setNovaDataFinalizarTabela(e.target.value)}/>
                         </div>
 
@@ -299,7 +308,7 @@ const ListaJogos = () => {
                         </select>
                         
                         <label>Algum estilo de jogo que queira adicionar a lista?</label>
-                        <input type="text" 
+                        <input type="text" id="adicionar-novo"
                             placeholder="Digite o estilo do jogo para ele ser adicionado a lista"
                             onChange={(e) => setNovoEstiloDeJogoCategoria(e.target.value)}/>
                     </div>
@@ -321,7 +330,6 @@ const ListaJogos = () => {
             <table className="tabela">        
                     <thead className="tabela-header">
                         <tr>
-                            <th>Ordem</th>
                             <th>Nome do jogo</th>
                             <th>Estilo de Jogo</th>
                             <th>Data pretendida</th>
@@ -334,7 +342,7 @@ const ListaJogos = () => {
                     <CorpoItensTabelaComponente/>
                     <tfoot>
                         <tr>
-                            <td colSpan='6'> Total={itensTabela.length}</td>
+                            <td colSpan='5'> Total={itensTabela.length}</td>
                         </tr>
                     </tfoot>
             </table>
