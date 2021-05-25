@@ -1,5 +1,7 @@
 # Lista de jogos para serem zerados
 
+https://lista-jogos.vercel.app/
+
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/GabrielCASilva/Lista-Jogos-para-serem-zerados/blob/main/LICENSE)
 
 ## Sobre o projeto
