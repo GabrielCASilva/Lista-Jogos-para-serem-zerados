@@ -8,8 +8,7 @@
     border: 2px solid #000;
     background-color: var(--cor-head-foot);
     border-collapse: collapse;
-    max-width: 800px;
-    min-width: 620px;
+    max-width: 100%;
     height: 100px;
     box-shadow: 10px 10px rgba(14, 29, 70, 0.7);
     margin-bottom: 80px;
