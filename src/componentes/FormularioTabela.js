@@ -322,7 +322,7 @@ const ListaJogos = () => {
                     <div className="envolve-btn">
                         <button className="btn-criar"
                             onClick={  () => { adicionarItemTabela() } }
-                        >Adicionar a tebela!</button>
+                        >Adicionar a tabela!</button>
                     </div>
                 </div>   
             </div>
